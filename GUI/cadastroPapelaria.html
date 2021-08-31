@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./CSS/cadastroPapelaria.css">
+        <title>Cadastro Papelaria</title>
+    </head>
+
+<body>
+    <header class="menu-cadastroPapelaria">
+        <main>
+        <div class="descricaoPagina">
+            <h1 class="font-aclonica">Cadastro<br>Papelaria</h1>
+        </div>
+    </main>
+    </header>
+    <main>
+    <fieldset>
+    <legend><b> Insira os dados </b></legend>
+    <label for=email><b> E-mail: </b></label> <br>
+	<input class="formulario" type="email" id="email" name="email" value="" required placeholder="E-mail" autofocus>
+    <br>
+    <br>
+    <label for=nome><b> Nome: </b></label> <br>
+	<input class="formulario" type="text" id="nome" name="nome" value="" required placeholder="Nome">
+    <br>
+    <br>
+    <label for=senha><b> Senha: </b></label> <br>
+	<input class="formulario" type="password" id="senha" name="senha" value="" required maxlength="8" placeholder="Senha">
+    <br>
+    <br>
+    <label for=confirmaSenha><b> Confirmar Senha: </b></label> <br>
+	<input class="formulario" type="password" id="confirmaSenha" name="confirmaSenha" value="" required maxlength="8" placeholder="Confirmar Senha">
+    <br>
+    <br>
+    <label for=cnpj><b> CNPJ: </b></label> <br>
+	<input class="formulario" type="text" id="cnpj" name="cnpj" value="" required maxlength="14" placeholder="CNPJ">
+    <br>
+    <br>
+    <label for=cep><b> CEP: </b></label> <br>
+	<input class="formulario" type="text" id="cep" name="cep" value="" required maxlength="9" placeholder="CEP">
+    <br>
+    <br>
+    <label for=cidade><b> Cidade: </b></label> <br>
+	<input class="formulario" type="text" id="cidade" name="cidade" value="" required placeholder="Cidade">
+    <br>
+    <br>
+    <label for=endereco><b> Endereço: </b></label> <br>
+	<input class="formulario" type="text" id="endereco" name="endereco" value="" required placeholder="Endereco">
+    <br>
+    <br>
+    <label for=numero><b> Número: </b></label> <br>
+	<input class="formulario" type="number" id="numero" name="numero" value="" required placeholder="Numero">
+    <br>
+    <br>
+    <label for=complemento><b> Complemento: </b></label> <br>
+	<input class="formulario" type="text" id="complemento" name="complemento" value="" placeholder="Complemento">
+    <br>
+    <br>
+    <label for=telefone><b> Telefone: </b></label> <br>
+	<input class="formulario" type="number" id="telefone" name="telefone" value="" required maxlength="11" placeholder="Telefone">
+    <br>
+    <br>
+    <label for=catalago><b> Catálago: </b></label> <br>
+    <img class="subirArquivo" src="./img/subirArquivo.png" alt="subirArquivo"> <label for="subirArquivo"> <a href="">Selecionar arquivo</a></label>
+    <br>
+    <br>
+    <label for=formasPagamento><b> Formas de pagamento que aceita: </b></label> <br>
+        <input type = "checkbox" id = "cartao" name = "cartao" value = "cartao">
+        <label for = "cartao"> Cartão </label>
+        <input type = "checkbox" id = "dinheiro" name = "dinheiro" value = "dinheiro">
+        <label for = "dinheiro"> Dinheiro </label>
+        <input type = "checkbox" id = "pix" name = "pix" value = "pix">
+        <label for = "pix"> Pix </label>
+    <br>
+    <br>
+    <label for=fotoFachada><b> Foto da Fachada: </b></label> <br>
+    <img class="subirArquivo" src="./img/subirArquivo.png" alt="subirArquivo"> <label for="subirArquivo"> <a href="">Selecionar arquivo</a></label>
+    </fieldset>
+    <br>
+	<button class="button"><b>Cancelar</b></button>
+	<button class="button"><b>Enviar</b></button>
+    </main>
+</body>
+</html>

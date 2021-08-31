@@ -1,0 +1,47 @@
+body {
+width: 100%;
+height: 100%;
+margin: 0 auto;
+}
+
+.menu-cadastroPapelaria {
+height: 60px;
+margin-bottom: 60px;
+}
+
+main {
+margin: 0 auto;
+width: 980px;
+position: relative;
+}
+
+div {
+    text-align: center;
+}
+
+.font-aclonica {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.formulario {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	}
+
+.subirArquivo {
+	display: block;
+	width: 100px;
+	height: 50%;
+}
+
+.button {
+	background-color: #0844a4;
+	border: none;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+    color: white;
+	}
