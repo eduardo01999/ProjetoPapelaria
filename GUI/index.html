@@ -4,33 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilo.css">
     <title>Index</title>
 </head>
 <body>
     <div class="container-fluid">
         <header class="row">
             <div class="col-12 col-sm-2">
-                IMAGEM
+                <img src="./img/logo.png" alt="logoApp" display= block width= 200px height= 100px>
             </div>
-            <div class="col-12 col-sm-8">
-                <h1>ESCOLHA A PAPELARIA</h1>
+            <div class="col-12 col-sm-9">
+                <h1 class="text-center">ESCOLHA A PAPELARIA</h1>
             </div>
-            <div class="col-12 col-sm-2">
+            <div class="col-12 col-sm-1">
                 <p><button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
-                    <strong>Login </br>Papelaria </strong>
+                    <p class="font-weight-bold"> Login Papelaria</p>
                   </button></p><div style="min-height: 120px;"><div class="collapse collapse-horizontal" id="collapseWidthExample"><div class="card card-body" style="width: 300px;">
                       This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
                     </div></div></div>
             </div>
         </header>
+        <div class="container">
         <main class="row">
-            <nav class="navbar navbar-light bg-light">
-                <form class="form-inline">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-                </form>
-              </nav>
+            <div class="col align-self-center">
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                      <input class="form-control mr-sm-2 teste" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                    </form>
+                  </nav>
+            </div>
+        </div>
+            <div class="container">
+            <div class="row">
+                <div class="col align-self-center">
+              <span class="border border-light">
+                  <img src="./img/subirArquivo.png" alt="logoDaPapelaria" class="img-thumbnail" display= block width= 100px height= 50%> <label for="logoDaPapelaria">
+                      <h2>titulo</h2>
+                </label>
+                <br>
+                      Endereço<br>
+                      horario<br>
+                      formas de pagamento
+              </span>
+            </div>
+            </div>
+            </div>
         </main>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
