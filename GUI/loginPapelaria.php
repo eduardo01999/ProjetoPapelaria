@@ -23,22 +23,21 @@
         <div class="container">
         <main class="row">
                 <div class="col align-self-center">
-                        <form>
+                        <form action="../BLL/process_login.php" method="POST">
                             <div class="form-group">
-                              <label for="exampleInputEmail1">Endereço de email</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                              <label>Endereço de email</label>
+                              <input type="email" name="email" class="form-control" id="email">
                               <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputPassword1">Senha</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                              <label>Senha</label>
+                              <input type="password" name="senha" class="form-control" id="senha">
                             </div>
-                            <button onclick="window.location.href='homePapelaria.php'" type="submit" class="btn btn-primary">Entrar</button>
-                            <p>Caso não possua cadastro <a href="cadastroPapelaria.php">clique aqui</a></p>
-                            </div>
+                            <input type="submit">
                         </form>
-                </div>
-            </div>
+                        <p>Caso não possua cadastro <a href="cadastroPapelaria.php">clique aqui</a></p>
+                        </div>
+                        
         </main>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

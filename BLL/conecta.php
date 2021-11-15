@@ -4,6 +4,8 @@ $username = "root";
 $password = "";
 $database = "papelarias";
 
+$conexao = mysqli_connect($servername, $username, $password, $database) or die ('Não foi possivel conectar');
+
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
   // set the PDO error mode to exception

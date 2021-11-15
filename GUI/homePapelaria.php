@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("../BLL/verifica.php")
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
