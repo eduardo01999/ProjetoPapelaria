@@ -37,7 +37,7 @@
                     include("../BLL/conecta.php");
 
                     try {
-                    $stmt = $conn->prepare("SELECT nome, endereco, numero, cidade, complemento, cartao, dinheiro, pix FROM usuariospapelaria"); 
+                    $stmt = $conn->prepare("SELECT id, nome, endereco, numero, cidade, complemento, cartao, dinheiro, pix FROM usuariospapelaria"); 
                     $stmt->execute();
 
                     // set the resulting array to associative
@@ -73,13 +73,13 @@
                         }
 
 
-                        echo "<b>Nome: </b>".$v["nome"]." <br>
+                        echo "<a href='envioCliente.php?id=".$v["id"]."'><b>Nome: </b>".$v["nome"]." <br>
                         <b>Cidade: </b>".$v["cidade"]."<br>
                         <b>Endereço: </b>".$v["endereco"]."
                         &nbsp &nbsp<b>Nº: </b>".$v["numero"]."<br>
                         $complemento"."
-                        <b>Formas de pagamento aceitas: </b>"."$cartao"."$dinheiro".$pix.
-                        "<br><br>";
+                        <b>Formas de pagamento aceitas: </b>"."$cartao"."$dinheiro".$pix."</a>
+                        <br><br>";
                     }
                     } catch(PDOException $e) {
                     echo "Error: " . $e->getMessage();
