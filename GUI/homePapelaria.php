@@ -37,7 +37,7 @@ $id = $_GET["id"];
                     include("../BLL/conecta.php");
 
                     try {
-                    $stmt = $conn->prepare("SELECT u.id,c.id, c.nome, c.path, c.data_upload, c.email, c.telefone, c.descricao, c.nome_arq FROM usuariospapelaria u, cliente c WHERE u.id = c.papelaria_id and c.papelaria_id = $id"); 
+                    $stmt = $conn->prepare("SELECT u.id,c.id as id_cliente, c.nome, c.path, c.data_upload, c.email, c.telefone, c.descricao, c.nome_arq FROM usuariospapelaria u, cliente c WHERE u.id = c.papelaria_id and c.papelaria_id = $id"); 
                     $stmt->execute();
 
                     // set the resulting array to associative
@@ -50,7 +50,9 @@ $id = $_GET["id"];
                         "nome do arquivo: ". $v["nome_arq"]."<br>".
                         "descrição: ".$v["descricao"]."<br>".
                         "data: ".date("d/m/Y H:i", strtotime($v["data_upload"]))."<br>".
-                        "<a href='$pasta' download>Download</a>"."<br> <br>";
+                        "<a href='$pasta' download>Download</a>"."<br>".
+                        "<a href='../BLL/excluir.php?id=".$v["id_cliente"]."'>Excluir</a>"
+                        ."<br> <br>";
                     }
                     } catch(PDOException $e) {
                     echo "Error: " . $e->getMessage();
