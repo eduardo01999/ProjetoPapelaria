@@ -20,6 +20,11 @@ $action = "../BLL/inserirCliente.php";
     <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css" >
     <link rel="stylesheet" href="estilo.css">
     <title>Envio Cliente</title>
+    <style> 
+    .oculto {
+        display: none;
+    }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -38,9 +43,9 @@ $action = "../BLL/inserirCliente.php";
             <main class="row">
                 <div class="col align-self-center">
                     <form action="<?php echo $action ?>?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
+                        <div class="form-group oculto">
                             <label for=ID><b> ID: </b></label> <br>
-                            <input class="form-control" type="number" placeholder="ID" name="idPapelaria" value="<?php echo $papelaria_id ?>" >
+                            <input class="form-control" type="number" placeholder="ID" name="idPapelaria" value="<?php echo $papelaria_id ?>">
                         </div>
                         <div class="form-group">
                             <label for=nome><b> Nome: </b></label> <br>
