@@ -9,7 +9,20 @@ $id = $_GET["id"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css" >
+    <script src="https://kit.fontawesome.com/61f3f3e294.js" crossorigin="anonymous"></script>
     <title>Home Papelaria</title>
+    <style>
+                table{
+                    border: 3px solid black;
+                    border-collapse: collapse;
+                    }
+
+                table {
+                    width: 65%;
+                    margin: auto;
+                    margin-bottom: 10px;
+                    }
+            </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -22,6 +35,8 @@ $id = $_GET["id"];
             </div>
             <div class="col-12 col-sm-2">
                 <img src="./img/logo.png" alt="logoApp" display= block width= 200px height= 100px>
+                <br>
+                <a href='loginPapelaria.php'><i class="fas fa-sign-out-alt"></i><br>Sair</a>
             </div>
         </header>
         <div class="container">
@@ -37,22 +52,34 @@ $id = $_GET["id"];
                     include("../BLL/conecta.php");
 
                     try {
-                    $stmt = $conn->prepare("SELECT u.id,c.id as id_cliente, c.nome, c.path, c.data_upload, c.email, c.telefone, c.descricao, c.nome_arq FROM usuariospapelaria u, cliente c WHERE u.id = c.papelaria_id and c.papelaria_id = $id"); 
+                    $stmt = $conn->prepare("SELECT u.id,c.id as id_cliente, c.nome, c.path, c.data_upload, c.email, c.telefone, c.descricao, c.nome_arq FROM usuariospapelaria u, cliente c WHERE u.id = c.papelaria_id and c.papelaria_id = $id ORDER BY c.data_upload DESC"); 
                     $stmt->execute();
 
                     // set the resulting array to associative
                     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
                     foreach($stmt->fetchAll() as $k=>$v) { 
                         $pasta = $v["path"];
-                        echo "nome: ".$v["nome"]."<br>".
-                        "email: ".$v["email"]."<br>".
-                        "telefone: ".$v["telefone"]."<br>".
-                        "nome do arquivo: ". $v["nome_arq"]."<br>".
-                        "descrição: ".$v["descricao"]."<br>".
-                        "data: ".date("d/m/Y H:i", strtotime($v["data_upload"]))."<br>".
-                        "<a href='$pasta' download>Download</a>"."<br>".
-                        "<a href='../BLL/excluir.php?id=".$v["id_cliente"]."'>Excluir</a>"
-                        ."<br> <br>";
+                        ?>
+                    <table cellpadding="10">
+                        <tbody>
+                            <tr>
+                                <td>
+                        <?php
+
+                        echo "<b>Nome do cliente: </b>".$v["nome"]."<br>".
+                        "<b>Email: </b>".$v["email"]."<br>".
+                        "<b>Telefone: </b>".$v["telefone"]."<br>".
+                        "<b>Nome do arquivo: </b>". $v["nome_arq"]. "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href='$pasta' download><i class='fas fa-download'></i> Download</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".
+                        "<a href='../BLL/excluir.php?id=".$v["id_cliente"]."'><i class='fas fa-trash-alt'></i> Excluir</a>"."<br>".
+                        "<b>Descrição: </b>".$v["descricao"]."<br>".
+                        "<b>Data: </b>".date("d/m/Y H:i", strtotime($v["data_upload"])).
+                        "<br><br>";
+                        ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <?php
                     }
                     } catch(PDOException $e) {
                     echo "Error: " . $e->getMessage();

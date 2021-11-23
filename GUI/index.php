@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilo.css">
     <title>Index</title>
+    <style>
+        a{
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -15,7 +20,7 @@
                 <img src="./img/logo.png" alt="logoApp" display= block width= 200px height= 100px>
             </div>
             <div class="col-12 col-sm-9">
-                <h1 class="text-center">ESCOLHA A PAPELARIA</h1>
+                <h1 class="text-center"><br>ESCOLHA<br> A <br>PAPELARIA</h1>
             </div>
             <div class="col-12 col-sm-1">
                 <p><button onclick="window.location.href='loginPapelaria.php'" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
@@ -23,6 +28,23 @@
                   </button></p><div style="min-height: 120px;"><div class="collapse collapse-horizontal" id="collapseWidthExample"><div class="card card-body" style="width: 300px;">
                     </div></div></div>
             </div>
+            <style>
+                table{
+                    border: 3px solid black;
+                    border-collapse: collapse;
+                    }
+
+                table {
+                    width: 50%;
+                    margin: auto;
+                    margin-bottom: 10px;
+                    }
+
+                td.tb1:hover {
+                    background-color: #C0C0C0;
+                    transition: background-color 3s;
+                    }
+            </style>
         </header>
         <div class="container">
         <main class="row">
@@ -71,8 +93,12 @@
                         else {
                             $complemento = "";
                         }
-
-
+                        ?>
+                    <table cellpadding="10">
+                        <tbody>
+                            <tr>
+                                <td class="tb1">
+                        <?php
                         echo "<a href='envioCliente.php?id=".$v["id"]."'><b>Nome: </b>".$v["nome"]." <br>
                         <b>Cidade: </b>".$v["cidade"]."<br>
                         <b>Endereço: </b>".$v["endereco"]."
@@ -80,6 +106,12 @@
                         $complemento"."
                         <b>Formas de pagamento aceitas: </b>"."$cartao"."$dinheiro".$pix."</a>
                         <br><br>";
+                        ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <?php
                     }
                     } catch(PDOException $e) {
                     echo "Error: " . $e->getMessage();

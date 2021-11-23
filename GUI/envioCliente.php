@@ -49,22 +49,23 @@ $action = "../BLL/inserirCliente.php";
                         </div>
                         <div class="form-group">
                             <label for=nome><b> Nome: </b></label> <br>
-                            <input class="form-control" type="text" placeholder="Nome" name="nome" value="<?php echo $nome ?>">
+                            <input class="form-control" type="text" placeholder="Nome" name="nome" value="<?php echo $nome ?>" required>
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Endereço de email</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email" name="email" value="<?php echo $email ?>">
+                          <label for="exampleInputEmail1"><b>Endereço de email: </b></label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email" name="email" value="<?php echo $email ?>" required>
                         </div>
                         <div class="form-group">
                             <label for=telefone><b> Telefone: </b></label> <br>
-                            <input class="form-control" type="number" placeholder="Telefone" name="telefone" value="<?php echo $telefone ?>">
+                            <input class="form-control" type="number" placeholder="Telefone" name="telefone" value="<?php echo $telefone ?>" required>
                         </div>
                         <div>
-                        <label for="exampleFormControlFile1">Insira o arquivo</label>
-                            <input type="file" id="arquivo1" name="arquivo">
+                        <label for="exampleFormControlFile1"><b>Insira o arquivo: </b></label>
+                            <input type="file" id="arquivo1" name="arquivo" required>
                         <div class="">
-                            <label for=copias><b> Descrição de quantas cópias de cada arquivo: </b></label> <br>
-                            <input type="text" class="form-control" name="descricao" value="<?php echo $descricao ?>">
+                            <br>
+                            <label for=copias><b> Informações/quantidade de cópias: </b></label> <br>
+                            <input type="text" class="form-control" name="descricao" value="<?php echo $descricao ?>" required>
                         </div>
                         </div>
                         <br>

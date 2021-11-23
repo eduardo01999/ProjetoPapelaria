@@ -45,6 +45,17 @@ else{
     <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css" >
     <link rel="stylesheet" href="estilo.css">
     <title>Cadastro Papelaria</title>
+    <script type="text/javascript">
+      function validar() {
+        var senha = cadastroPapelaria.senha.value;
+        var repSenha = cadastroPapelaria.confirmarSenha.value;
+
+        if (senha != repSenha) {
+          alert('Senhas diferentes');
+          return false;
+        }
+      }
+    </script>
 </head>
 <body>
     <div class="container-fluid">
@@ -63,68 +74,68 @@ else{
     <div class="container">
       <main class="row">
         <div class="col align-self-center">
-      <form action="<?php echo $action ?>?id=<?php echo $id ?>"  method="post">
+      <form name="cadastroPapelaria" action="<?php echo $action ?>?id=<?php echo $id ?>"  method="post">
         <div class="col-12 col-sm-8">
-            <label for="exampleFormControlInput1" class="form-label ">Email</label>
-            <input type="email" class="form-control" placeholder="nome@exemplo.com" name="email" value="<?php echo $email ?>">
+            <label for="exampleFormControlInput1" class="form-label "><b>Email: </b></label>
+            <input type="email" class="form-control" placeholder="nome@exemplo.com" name="email" value="<?php echo $email ?>" required>
           </div>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">Nome:</label>
-        <input type="text" class="form-control" placeholder="Nome" name="nome" value="<?php echo $nome ?>">
+        <label for="exampleFormControlInput1" class="form-label"><b>Nome: </b></label>
+        <input type="text" class="form-control" placeholder="Nome" name="nome" value="<?php echo $nome ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">Senha</label>
-        <input type="password" class="form-control" placeholder="Senha" name="senha" value="<?php echo $senha ?>">
+        <label for="exampleFormControlInput1" class="form-label"><b>Senha: </b></label>
+        <input type="password" class="form-control" placeholder="Senha" name="senha" value="<?php echo $senha ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">Confirmar Senha</label>
+        <label for="exampleFormControlInput1" class="form-label"><b>Confirmar Senha: </b></label>
         <input type="password" class="form-control" placeholder="Confirma Senha" name="confirmarSenha">
       </div>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">CNPJ</label>
-        <input type="number" class="form-control" placeholder="CNPJ" name="cnpj" value="<?php echo $cnpj ?>">
+        <label for="exampleFormControlInput1" class="form-label"><b>CNPJ: </b></label>
+        <input type="number" class="form-control" placeholder="CNPJ" name="cnpj" value="<?php echo $cnpj ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">CEP</label>
-        <input type="number" class="form-control" placeholder="CEP" name="cep" value="<?php echo $cep ?>">
+        <label for="exampleFormControlInput1" class="form-label"><b>CEP: </b></label>
+        <input type="number" class="form-control" placeholder="CEP" name="cep" value="<?php echo $cep ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">Cidade</label>
-        <input type="text" class="form-control" placeholder="Cidade" name="cidade" value="<?php echo $cidade ?>">
+        <label for="exampleFormControlInput1" class="form-label"><b>Cidade: </b></label>
+        <input type="text" class="form-control" placeholder="Cidade" name="cidade" value="<?php echo $cidade ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">Endereço</label>
-        <input type="text" class="form-control" placeholder="Endereço" name="endereco" value="<?php echo $endereco ?>">
+        <label for="exampleFormControlInput1" class="form-label"><b>Endereço: </b></label>
+        <input type="text" class="form-control" placeholder="Endereço" name="endereco" value="<?php echo $endereco ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">Número</label>
-        <input type="number" class="form-control" placeholder="Número" name="numero" value="<?php echo $numero ?>">
+        <label for="exampleFormControlInput1" class="form-label"><b>Número: </b></label>
+        <input type="number" class="form-control" placeholder="Número" name="numero" value="<?php echo $numero ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">Complemento</label>
+        <label for="exampleFormControlInput1" class="form-label"><b>Complemento: </b></label>
         <input type="text" class="form-control" placeholder="Complemento" name="complemento" value="<?php echo $complemento ?>">
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
-        <label for="exampleFormControlInput1" class="form-label">Telefone</label>
-        <input type="number" class="form-control" placeholder="Telefone" name="telefone" value="<?php echo $telefone ?>">
+        <label for="exampleFormControlInput1" class="form-label"><b>Telefone: </b></label>
+        <input type="number" class="form-control" placeholder="Telefone" name="telefone" value="<?php echo $telefone ?>" required>
       </div>
     <br>
     <br>
@@ -138,7 +149,7 @@ else{
     <br>
     <br>
     <input type="button" onclick="window.location.href='index.php'" value="Voltar">
-	  <input type="submit">
+	  <input type="submit" onclick="return validar()">
   </form>
 </div>
     </main>

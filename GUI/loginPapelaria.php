@@ -25,12 +25,12 @@
                 <div class="col align-self-center">
                         <form action="../BLL/process_login.php" method="POST">
                             <div class="form-group">
-                              <label>Endereço de email</label>
+                              <label><b>Endereço de email: </b></label>
                               <input type="email" name="email" class="form-control" id="email">
                               <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
                             </div>
                             <div class="form-group">
-                              <label>Senha</label>
+                              <label><b>Senha: </b></label>
                               <input type="password" name="senha" class="form-control" id="senha">
                             </div>
                             <input type="submit">
