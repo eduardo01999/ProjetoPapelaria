@@ -88,24 +88,24 @@ else{
     <br>
     <div class="col-12 col-sm-8">
         <label for="exampleFormControlInput1" class="form-label"><b>Senha: </b></label>
-        <input type="password" class="form-control" placeholder="Senha" name="senha" value="<?php echo $senha ?>" required>
+        <input type="password" class="form-control" maxlength="10" placeholder="Senha" name="senha" value="<?php echo $senha ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
         <label for="exampleFormControlInput1" class="form-label"><b>Confirmar Senha: </b></label>
-        <input type="password" class="form-control" placeholder="Confirma Senha" name="confirmarSenha">
+        <input type="password" class="form-control" maxlength="10" placeholder="Confirma Senha" name="confirmarSenha">
       </div>
     <br>
     <div class="col-12 col-sm-8">
         <label for="exampleFormControlInput1" class="form-label"><b>CNPJ: </b></label>
-        <input type="number" class="form-control" placeholder="CNPJ" name="cnpj" value="<?php echo $cnpj ?>" required>
+        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj" value="<?php echo $cnpj ?>" required>
       </div>
     <br>
     <br>
     <div class="col-12 col-sm-8">
         <label for="exampleFormControlInput1" class="form-label"><b>CEP: </b></label>
-        <input type="number" class="form-control" placeholder="CEP" name="cep" value="<?php echo $cep ?>" required>
+        <input type="text" class="form-control" placeholder="CEP" name="cep" value="<?php echo $cep ?>" required>
       </div>
     <br>
     <br>
